@@ -1,6 +1,6 @@
 <%= form_for(post) do |f| %>
 <% if post.errors.any?  %>
-  <h2><%= pluralize(post.errors.count, 'error') %> to fix</h2>
+  <h2><%= pluralize(post.errors.count, 'error')a %> to fix</h2>
   <ul>
     <% post.errors.full_messages.each do |message| %>
     <li><%= message %></li>
