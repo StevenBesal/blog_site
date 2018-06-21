@@ -1,0 +1,19 @@
+// Place all the styles related to the Misc controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar{
+  // background-color: pink;
+  // color: white;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  display: inline-block;
+  a{
+    border-radius: 10px;
+    background-color: #d5d9e0;
+    text-decoration: none;
+    border: 3px solid black;
+    padding: 5px;
+  }
+}

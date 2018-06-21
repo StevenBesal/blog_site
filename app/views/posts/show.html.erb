@@ -1,0 +1,29 @@
+<div class="navbar">
+  <%= link_to 'Posts Home', posts_path %>
+  <%= link_to 'New Post', new_post_path %>
+</div>
+
+
+<div class="content">
+  <h1><%= @post.title %></h1>
+  <h4><%= "By #{@post.author}" %></h4>
+  <p><%= @post.body %></p>
+  <button type="button" name="button">
+    <%= link_to 'Edit Post', edit_post_path %>
+  </button>
+  <button type="button" name="button">
+    <%= link_to 'Delete Post', @post, method: :delete %>
+  </button>
+</div>
+
+<hr>
+<div class="comments">
+  <h3>Comment Section</h3>
+  <%= render partial: 'comments/comment', collection: @post.comments, as: :comment %>
+</div>
+
+<hr>
+<div class="content">
+  <h3>Add Comment</h3>
+  <%= render partial: "comments/form", locals: { comment: @post.comments.new } %>
+</div>

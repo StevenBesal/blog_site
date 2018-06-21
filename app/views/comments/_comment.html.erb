@@ -1,0 +1,9 @@
+<b><%= comment.name %>:</b>
+<p><%= comment.content %></p>
+<button type="button" name="button">
+  <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
+</button>
+<button type="button" name="button">
+  <%= link_to "Delete", [@post, comment], method: :delete %>
+</button>
+<hr>
