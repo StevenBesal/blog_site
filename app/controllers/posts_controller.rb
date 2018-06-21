@@ -19,15 +19,26 @@ class PostsController < ApplicationController
   def create
     post_params = params.require(:post).permit(:title, :body, :author)
     @post = Post.new(post_params)
-    @post.save
-    redirect_to @post
+    respond_to do |format|
+      if @post.save
+        format.html{redirect_to @post, notice: 'Post was created'}
+      else
+        format.html{render :new}
+      end
+    end
   end
 
   def update
     @post = Post.find(params[:id])
     post_params = params.require(:post).permit(:title, :body, :author)
-    @post.update(post_params)
-    redirect_to @post
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html{redirect_to @post, notice: 'Post was Updated'}
+      else
+        format.html{render :new}
+      end
+    end
+    # redirect_to @post
   end
 
   def destroy
